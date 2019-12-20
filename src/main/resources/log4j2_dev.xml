@@ -10,7 +10,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss SSS} [%t] %-5level  %l: %msg%n" />
         </Console>
-        <RollingRandomAccessFile name="RRAFile" filename="${LOG_HOME}/${FILE_NAME}.log" filepattern="%{LOG_HOME}/%d{yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
+        <RollingRandomAccessFile name="RRAFile" filename="${LOG_HOME}/${FILE_NAME}.log" filepattern="${LOG_HOME}/%d{yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss SSS} [%t] %-5level  %l %msg%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" />
