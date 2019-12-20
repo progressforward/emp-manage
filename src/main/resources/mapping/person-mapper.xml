@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.empmanage.dao.PersonDao">
+    <insert id="save" parameterType="com.example.empmanage.entity.Person">
+        insert into emp_person (id, name, birthday, address, phone) values
+        (#{id}, #{name}, #{birthday}, #{address}, #{phone})
+    </insert>
+
+    <select id="getById" resultType="com.example.empmanage.entity.Person">
+        select * from emp_person where id = #{id}
+    </select>
+
+    <select id="getAll" resultType="com.example.empmanage.entity.Person">
+        select * from emp_person
+    </select>
+
+    <delete id="deleteEmp" parameterType="Integer">
+        delete from emp_person where id = #{id}
+    </delete>
+
+    <update id="updateEmp" parameterType="com.example.empmanage.entity.Person">
+        update emp_person set name=#{name}, birthday=#{birthday}, address=#{address}, phone=#{phone} where id = #{id}
+    </update>
+</mapper>
